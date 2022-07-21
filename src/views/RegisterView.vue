@@ -18,14 +18,14 @@
           </div>
         </div>
         <div class="h-12"></div>
-        <form class="flex flex-col items-center">
+        <form class="flex flex-col items-center" @submit.prevent="register">
           <input
             type="text"
             id="username"
             class="text-center bg-neutral-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:bg-white focus:ring-blue-500 focus:border-blue-500 block w-3/5 p-2.5"
             placeholder="Username"
             required
-            :value="username"
+            v-model="username"
           />
           <div class="h-4"></div>
           <input
@@ -34,7 +34,7 @@
             class="text-center bg-neutral-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:bg-white focus:ring-blue-500 focus:border-blue-500 block w-3/5 p-2.5"
             placeholder="Password"
             required
-            :value="password"
+            v-model="password"
           />
           <div class="h-4"></div>
           <input
@@ -43,13 +43,12 @@
             class="text-center bg-neutral-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:bg-white focus:ring-blue-500 focus:border-blue-500 block w-3/5 p-2.5"
             placeholder="Enter the password again"
             required
-            :value="password"
+            v-model="password2"
           />
           <div class="h-8"></div>
           <button
             type="submit"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-3/5 px-5 py-2.5 text-center"
-            @click="register"
           >
             Sign up
           </button>
@@ -73,10 +72,12 @@
 <script setup lang="ts">
 import route from "@/router/index";
 import { ref } from "vue";
-// import axios from "axios";
+import axios from "axios";
+import { requestUrl } from "@/http";
 
 const username = ref("");
 const password = ref("");
+const password2 = ref("");
 
 const routeToLogin = () => {
   route.push({
@@ -85,9 +86,25 @@ const routeToLogin = () => {
 };
 
 const register = () => {
+  if (
+    !username.value ||
+    !password.value ||
+    !password2.value ||
+    password.value !== password2.value
+  ) {
+    return;
+  }
   console.log(`${username.value} tries to register`);
-  // axios.post()
-  // TODO
+  axios
+    .post(`${requestUrl}/register`, {
+      username: username.value,
+      password: password.value,
+    })
+    .then((res) => {
+      if (res.data) {
+        route.back();
+      }
+    });
 };
 </script>
 
