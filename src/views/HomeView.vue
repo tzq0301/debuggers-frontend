@@ -87,16 +87,16 @@
       class="w-1/4 h-2/3 bg-white rounded-3xl opacity-90 px-8 py-8 flex flex-col items-center justify-center absolute right-80 opacity-0"
       :class="{ appear: !isInit }"
     >
-      <div class="text-xl">歌曲：{{ song }}</div>
+      <div class="text-xl">Music: {{ song }}</div>
       <br />
-      <div class="text-xl">歌手：{{ singer }}</div>
+      <div class="text-xl">Singer: {{ singer }}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// import axios from "axios";
-// import { requestUrl } from "@/http";
+import axios from "axios";
+import { requestUrl } from "@/http";
 import { ref } from "vue";
 
 const isInit = ref(true);
@@ -128,9 +128,23 @@ const move = () => {
     return;
   }
   // TODO upload
-  song.value = "Teeth";
-  singer.value = "5 Seconds Of Summer";
+  // song.value = "Teeth";
+  // singer.value = "5 Seconds Of Summer";
   // TODO upload
+  console.log(files[0]);
+  const formData = new FormData();
+  formData.append("file", files[0]);
+  axios
+    .post(`${requestUrl}/upload/text/${text.value}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((res) => {
+      console.log(res);
+      song.value = res.data.song;
+      singer.value = res.data.singer;
+    });
   isInit.value = false;
 };
 </script>
