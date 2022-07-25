@@ -11,7 +11,7 @@
       <div class="flex-1 relative">
         <div class="items-center flex flex-col">
           <div class="h-44"></div>
-          <div class="font-bold text-5xl">Hello Again!</div>
+          <div class="font-bold text-5xl">Singing Helper</div>
           <div class="h-6"></div>
           <div class="text-xs text-gray-400">
             Welcome back for the service provided by Today's Singing Helper
