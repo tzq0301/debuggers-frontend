@@ -90,6 +90,8 @@
       <div class="text-xl">Music: {{ song }}</div>
       <br />
       <div class="text-xl">Singer: {{ singer }}</div>
+      <br />
+      <img :src="picture" alt="专辑图片" />
     </div>
   </div>
 </template>
@@ -109,6 +111,7 @@ const filepath = ref("");
 
 const song = ref("");
 const singer = ref("");
+const picture = ref("");
 
 const getFile = () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -130,6 +133,8 @@ const move = () => {
   // TODO upload
   // song.value = "Teeth";
   // singer.value = "5 Seconds Of Summer";
+  // picture.value =
+  //   "http://p1.music.126.net/jVz8WDfpZn2SZiIZ0Y58YQ==/109951165914325598.jpg";
   // TODO upload
   console.log(files[0]);
   const formData = new FormData();
@@ -144,6 +149,7 @@ const move = () => {
       console.log(res);
       song.value = res.data.song;
       singer.value = res.data.singer;
+      picture.value = res.data.picture;
     });
   isInit.value = false;
 };
