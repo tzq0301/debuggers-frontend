@@ -1,46 +1,21 @@
-# debuggers-frontend
+# Today's Singing Helper | Cloud Computing Topic | NUS Summer Workshop
 
-This template should help get you started developing with Vue 3 in Vite.
+## Screen-Shots
 
-## Recommended IDE Setup
+### Sign in Page
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+![image-20220926190235251](https://tzq-oos-1.oss-cn-hangzhou.aliyuncs.com/img/image-20220926190235251.png)
 
-## Type Support for `.vue` Imports in TS
+### Sign up Page
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+![image-20220926190300405](https://tzq-oos-1.oss-cn-hangzhou.aliyuncs.com/img/image-20220926190300405.png)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### Service Page
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+![image-20220926190313772](https://tzq-oos-1.oss-cn-hangzhou.aliyuncs.com/img/image-20220926190313772.png)
 
-## Customize configuration
+## Awards
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+**Best Implementation** of the course *SWS3004 Cloud Computing with Big Data* with the group project *Today's Singing Helper* in the National University of Singapore Schoold of Computing Summer Workshop
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+![SWS3004_Best Implementation](https://tzq-oos-1.oss-cn-hangzhou.aliyuncs.com/img/SWS3004_Best%20Implementation.png)
